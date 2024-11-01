@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoController {
@@ -18,6 +19,12 @@ public class ProdutoController {
     @GetMapping
     public ResponseEntity<List<Produto>> findAll() {
         List<Produto> produtos = produtoService.findAll();
+        return ResponseEntity.ok().body(produtos);
+    }
+
+    @GetMapping("/categoria/{idCategoria}")
+    public ResponseEntity<List<Produto>> findAllByCategoriaId(@PathVariable Long idCategoria) {
+        List<Produto> produtos = produtoService.findByCategoriaId(idCategoria);
         return ResponseEntity.ok().body(produtos);
     }
 

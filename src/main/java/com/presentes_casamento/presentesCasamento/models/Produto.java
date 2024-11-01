@@ -9,8 +9,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
-import java.math.BigDecimal;
-
 @Data
 @Entity
 public class Produto {
@@ -23,11 +21,11 @@ public class Produto {
     private String nome;
 
     @Column(nullable = false)
-    private BigDecimal valor;
+    private String valor;
 
     @Column(length = 255)
     private String foto;
-    
+
     @Column(length = 255)
     private String link_loja;
 

@@ -12,19 +12,23 @@ import com.presentes_casamento.presentesCasamento.services.exceptions.ObjectNotF
 
 @Service
 public class ProdutoService {
-    
+
     @Autowired
     private ProdutoRepository produtoRepository;
 
     public List<Produto> findAll() {
         return produtoRepository.findAll();
     }
-    
+
+    // Busca de produtos por ID de categoria
+    public List<Produto> findByCategoriaId(Long idCategoria) {
+        return produtoRepository.findByCategoriaId(idCategoria);
+    }
+
     public Produto findById(Long id) {
         Optional<Produto> produto = this.produtoRepository.findById(id);
         return produto.orElseThrow(() -> new ObjectNotFoundException(
-            "Produto não encontrado! Id: " + id + ", Tipo: " + Produto.class.getName()
-        ));  
+                "Produto não encontrado! Id: " + id + ", Tipo: " + Produto.class.getName()));
     }
 
     public Produto create(Produto obj) {
@@ -45,7 +49,7 @@ public class ProdutoService {
     }
 
     public void delete(Long id) {
-        findById(id);  // Garante que o produto existe antes de deletar
+        findById(id); // Garante que o produto existe antes de deletar
         produtoRepository.deleteById(id);
     }
 }
