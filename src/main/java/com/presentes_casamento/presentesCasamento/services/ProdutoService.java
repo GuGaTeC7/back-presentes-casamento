@@ -37,6 +37,9 @@ public class ProdutoService {
         produtoExistente.setNome(obj.getNome());
         produtoExistente.setValor(obj.getValor());
         produtoExistente.setFoto(obj.getFoto());
+        produtoExistente.setLink_loja(obj.getLink_loja());
+        produtoExistente.setImg_loja(obj.getImg_loja());
+        produtoExistente.setObservacao(obj.getObservacao());
         produtoExistente.setCategoria(obj.getCategoria());
         return produtoRepository.save(produtoExistente);
     }

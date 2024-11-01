@@ -27,6 +27,15 @@ public class Produto {
 
     @Column(length = 255)
     private String foto;
+    
+    @Column(length = 255)
+    private String link_loja;
+
+    @Column(length = 255)
+    private String img_loja;
+
+    @Column(length = 255)
+    private String observacao;
 
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false)

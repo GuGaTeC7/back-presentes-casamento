@@ -2,6 +2,8 @@ package com.presentes_casamento.presentesCasamento.models;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,6 +24,7 @@ public class Categoria {
     @Column(nullable = false, unique = true, length = 50)
     private String nome;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
     private List<Produto> produtos;
 }
