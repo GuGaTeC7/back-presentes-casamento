@@ -11,6 +11,6 @@ FROM openjdk:21-jdk-slim
 
 EXPOSE 8080
 
-COPY --from=build target\presentesCasamento-0.0.1-SNAPSHOT.jar app.jr
+COPY --from=build target/presentesCasamento-0.0.1-SNAPSHOT.jar app.jr
 
 ENTRYPOINT [ "java", "-jar", "app.jr" ]
