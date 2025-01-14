@@ -34,3 +34,4 @@ build/
 
 ## BD ##
 src/main/resources/application-dev.properties
+src/main/resources/application-local.properties
