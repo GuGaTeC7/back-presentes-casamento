@@ -35,6 +35,8 @@ public class Produto {
     @Column(length = 255)
     private String observacao;
 
+    private Boolean comprado;
+
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;

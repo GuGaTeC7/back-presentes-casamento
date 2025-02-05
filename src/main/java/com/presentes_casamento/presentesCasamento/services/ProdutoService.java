@@ -44,6 +44,7 @@ public class ProdutoService {
         produtoExistente.setLink_loja(obj.getLink_loja());
         produtoExistente.setImg_loja(obj.getImg_loja());
         produtoExistente.setObservacao(obj.getObservacao());
+        produtoExistente.setComprado(obj.getComprado());
         produtoExistente.setCategoria(obj.getCategoria());
         return produtoRepository.save(produtoExistente);
     }
